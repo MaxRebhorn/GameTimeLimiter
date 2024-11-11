@@ -1,6 +1,6 @@
 import customtkinter as ctk
-from Systems/
-from tkinter import Tk, StringVar
+from Systems.AuthenticationSystem import AuthenticationSystem as Auth
+from tkinter import messagebox, Tk, StringVar
 
 class LoginView:
 	def __init__(self, master):
@@ -28,7 +28,12 @@ class LoginView:
 	def login(self):
 		username = self.usernameVar.get()
 		password = self.passwordVar.get()
-		# Use these values to perform your login logic
+		response = Auth.login(username,password)
+		if response:  # If the login was successful
+			# Start another process here
+			self.master.destroy()  # Close the login window
+		else:  # If the login was not successful
+			messagebox.showerror("Error", "Invalid username or password!")  # Show an error message
 
 def main():
 	root = Tk()

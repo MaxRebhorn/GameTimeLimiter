@@ -1,0 +1,11 @@
+{
+  "admin": {
+    "username": "TestAdmin",
+    "password": "123"
+  },
+  "user": {
+    "username": "TestUser",
+    "password": "124",
+    "daily-time-limit": "2"
+  }
+}
